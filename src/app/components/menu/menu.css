@@ -1,0 +1,33 @@
+nav{
+
+  background:#111;
+
+  padding:18px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:30px;
+
+}
+
+a{
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:18px;
+
+  font-weight:bold;
+
+  transition:0.3s;
+
+}
+
+a:hover{
+
+  color:#00bfff;
+
+}

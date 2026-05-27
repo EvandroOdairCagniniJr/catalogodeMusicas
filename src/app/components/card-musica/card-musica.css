@@ -1,0 +1,43 @@
+.card{
+
+  border:1px solid #ccc;
+
+  padding:20px;
+
+  border-radius:12px;
+
+  width:250px;
+
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+
+}
+
+h2{
+
+  margin-bottom:15px;
+
+}
+
+p{
+
+  margin-bottom:10px;
+
+}
+
+button{
+
+  background:#111;
+
+  color:white;
+
+  border:none;
+
+  padding:10px;
+
+  border-radius:8px;
+
+  cursor:pointer;
+
+  width:100%;
+
+}
