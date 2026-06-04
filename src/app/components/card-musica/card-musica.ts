@@ -1,9 +1,27 @@
-import { Component } from '@angular/core';
+import {
+Component,
+Input,
+Output,
+EventEmitter
+} from '@angular/core';
 
 @Component({
-  selector: 'app-card-musica',
-  imports: [],
-  templateUrl: './card-musica.html',
-  styleUrl: './card-musica.css',
+  selector:'app-card-musica',
+  standalone:true,
+
+  imports:[],
+
+  templateUrl:'./card-musica.html',
+  styleUrl:'./card-musica.css'
 })
-export class CardMusica {}
+
+export class CardMusica {
+
+  @Input()
+  musica:any;
+
+  @Output()
+  favoritar =
+  new EventEmitter<any>();
+
+}

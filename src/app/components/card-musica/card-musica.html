@@ -1,1 +1,17 @@
-<p>card-musica works!</p>
+<div class="card">
+
+  <img [src]="musica.imagem" alt="Capa da música">
+
+  <h2>{{ musica.nome }}</h2>
+
+  <p>{{ musica.artista }}</p>
+
+  <p>{{ musica.genero }}</p>
+
+  <p>{{ musica.duracao }}</p>
+
+  <button (click)="favoritar.emit(musica)">
+    Favoritar
+  </button>
+
+</div>

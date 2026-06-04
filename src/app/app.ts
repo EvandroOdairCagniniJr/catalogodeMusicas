@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { RouterOutlet } from '@angular/router';
 
 import { Menu } from './components/menu/menu';
@@ -17,7 +18,5 @@ import { Menu } from './components/menu/menu';
 })
 
 export class App {
-
-  title = 'catalogodeMusicas';
 
 }

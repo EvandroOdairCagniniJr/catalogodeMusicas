@@ -1,6 +1,6 @@
 nav{
 
-  background:#111;
+  background:#3A0066;
 
   padding:18px;
 
@@ -14,7 +14,7 @@ nav{
 
 a{
 
-  color:white;
+  color:#00FF33;
 
   text-decoration:none;
 
@@ -28,6 +28,6 @@ a{
 
 a:hover{
 
-  color:#00bfff;
+  color:#ffffff;
 
 }

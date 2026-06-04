@@ -1,1 +1,18 @@
-<p>musicas works!</p>
+<h1>Músicas</h1>
+
+<div class="lista">
+
+  @for(musica of musicas; track musica.nome){
+
+    <app-card-musica
+
+      [musica]="musica"
+
+      (favoritar)="adicionarFavorito($event)"
+
+    >
+    </app-card-musica>
+
+  }
+
+</div>
