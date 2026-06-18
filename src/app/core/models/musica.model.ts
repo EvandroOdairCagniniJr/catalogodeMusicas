@@ -1,5 +1,7 @@
 export interface Musica {
 
+  id:number;
+
   nome:string;
 
   artista:string;
@@ -7,5 +9,7 @@ export interface Musica {
   genero:string;
 
   duracao:string;
+
+  imagem:string;
 
 }

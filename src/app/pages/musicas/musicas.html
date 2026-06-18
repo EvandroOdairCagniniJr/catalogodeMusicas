@@ -1,18 +1,17 @@
-<h1>Músicas</h1>
+<h1 class="titulo">
+  Músicas
+</h1>
 
-<div class="lista">
+<div class="lista-musicas">
 
-  @for(musica of musicas; track musica.nome){
+  <app-card-musica
 
-    <app-card-musica
+    *ngFor="let musica of musicas"
 
-      [musica]="musica"
+    [musica]="musica"
 
-      (favoritar)="adicionarFavorito($event)"
+    (favoritar)="adicionarFavorito($event)">
 
-    >
-    </app-card-musica>
-
-  }
+  </app-card-musica>
 
 </div>

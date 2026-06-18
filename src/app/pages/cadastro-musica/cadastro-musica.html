@@ -1,0 +1,60 @@
+<h1>Cadastro de Música</h1>
+
+<form
+  [formGroup]="formulario"
+  (ngSubmit)="salvar()"
+>
+
+  <input
+    type="text"
+    placeholder="Nome"
+    formControlName="nome"
+  >
+
+  <br><br>
+
+  <input
+    type="text"
+    placeholder="Artista"
+    formControlName="artista"
+  >
+
+  <br><br>
+
+  <input
+    type="text"
+    placeholder="Gênero"
+    formControlName="genero"
+  >
+
+  <br><br>
+
+  <input
+    type="text"
+    placeholder="Duração"
+    formControlName="duracao"
+  >
+
+  <br><br>
+
+  <input
+    type="text"
+    placeholder="Álbum"
+    formControlName="album"
+  >
+
+  <br><br>
+
+  <input
+    type="text"
+    placeholder="Imagem"
+    formControlName="imagem"
+  >
+
+  <br><br>
+
+  <button type="submit">
+    Salvar
+  </button>
+
+</form>

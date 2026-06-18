@@ -1,57 +1,83 @@
 import { Component } from '@angular/core';
 
-import { CardMusica } from '../../components/card-musica/card-musica';
-import { Favoritos } from '../../services/favoritos';
+import { CommonModule }
+from '@angular/common';
 
+import { CardMusica }
+from '../../components/card-musica/card-musica';
+
+import { Favoritos }
+from '../../services/favoritos';
+
+import { FavoritosApi }
+from '../../services/favoritos-api';
+
+import { MusicaApi }
+from '../../services/musica-api';
 @Component({
+
   selector: 'app-musicas',
+
   standalone: true,
 
   imports: [
+    CommonModule,
     CardMusica
   ],
 
   templateUrl: './musicas.html',
+
   styleUrl: './musicas.css'
+
 })
 
 export class Musicas {
 
   constructor(
-    public favoritos: Favoritos
-  ) {}
+  public favoritos: Favoritos,
+  private favoritosApi: FavoritosApi,
+  private musicaApi: MusicaApi
+){}
 
-  musicas = [
+  musicas:any[] = [];
 
-  {
-    nome:'Incondicional',
-    artista:'Luan Santana',
-    genero:'Sertanejo',
-    duracao:'3:00',
-    imagem:'https://thf.bing.com/th/id/OIP.f25z2JGeuqLK3gYMZ-WDjwHaHa?w=108&h=108&c=1&bgcl=0a9729&r=0&o=7&pid=ImgRC&rm=3.jpg'
-  },
+  ngOnInit(){
 
-  {
-    nome:'Nosso Lugar',
-    artista:'MC Kevin',
-    genero:'Funk',
-    duracao:'4:00',
-    imagem:'https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/c5/8f/f9/c58ff927-beac-41de-f308-defd71687b09/00194491451899_Cover.jpg/600x600cc.webp.jpg'
-  },
+  this.musicaApi
+    .getAll()
+    .subscribe((dados:any) => {
 
-  {
-    nome:'A Hora É Agora',
-    artista:'Jorge & Mateus',
-    genero:'Sertanejo',
-    duracao:'3:00',
-    imagem:'https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f4/64/f8/f464f808-b6c7-d657-4835-afc855a35acc/7891430263324.jpg/600x600cc.webp.jpg'
-  }
+      console.log(dados);
 
-];
+      this.musicas = [];
 
-  adicionarFavorito(musica: any) {
+      for(const key in dados){
 
-    this.favoritos['favoritos'].push(musica);
+        this.musicas.push({
+
+          firebaseId: key,
+
+          ...dados[key]
+
+        });
+
+      }
+
+    });
+
+}
+
+  adicionarFavorito(musica:any){
+
+  this.favoritos.favoritos.push(musica);
+
+  this.favoritosApi
+    .create(musica)
+    .subscribe(() => {
+
+      alert('Adicionado aos favoritos!');
+
+    });
 
   }
 
